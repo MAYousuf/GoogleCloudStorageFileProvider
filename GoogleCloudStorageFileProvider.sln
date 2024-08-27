@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoogleCloudStorageFileProvider", "src\GoogleCloudStorageFileProvider\GoogleCloudStorageFileProvider.csproj", "{B6CE1911-C8FE-474D-9865-1D63961F94B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{E182D482-D1CB-45FE-946D-993FD35240BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleWebApp", "src\SampleWebApp\SampleWebApp.csproj", "{A0E387FF-7F7A-413E-BCBA-66F8CBF3B116}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6838B74A-FE58-47D6-AFDE-5B8539F1B5C1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6CE1911-C8FE-474D-9865-1D63961F94B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6CE1911-C8FE-474D-9865-1D63961F94B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6CE1911-C8FE-474D-9865-1D63961F94B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6CE1911-C8FE-474D-9865-1D63961F94B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E387FF-7F7A-413E-BCBA-66F8CBF3B116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E387FF-7F7A-413E-BCBA-66F8CBF3B116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E387FF-7F7A-413E-BCBA-66F8CBF3B116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E387FF-7F7A-413E-BCBA-66F8CBF3B116}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A0E387FF-7F7A-413E-BCBA-66F8CBF3B116} = {E182D482-D1CB-45FE-946D-993FD35240BD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47371F15-1873-4620-9CA6-1030D559449A}
+	EndGlobalSection
+EndGlobal
