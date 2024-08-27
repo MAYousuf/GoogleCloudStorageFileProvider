@@ -6,7 +6,7 @@
     <VersionPrefix>1.0.0-beta1</VersionPrefix>
     <Authors>mayousuf</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageTags>google;cloud;blob;storage;aspnetcore;mvc</PackageTags>
+    <PackageTags>dotnet;asp-net-core;blob-storage;google;cloud;gcp</PackageTags>
     <PackageProjectUrl>https://github.com/mayousuf/GoogleCloudStorageFileProvider</PackageProjectUrl>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
