@@ -50,6 +50,7 @@ Below is the usage example for both flows - where access to files from Storage b
 We can optimize performance by caching files as below
 
 ```csharp
+var cacheMaxAgeOneWeek = (60 * 60 * 24 * 7).ToString();
 app.UseStaticFiles(new StaticFileOptions()
 {
     FileProvider = cloudStorageFileProvider,
@@ -57,11 +58,19 @@ app.UseStaticFiles(new StaticFileOptions()
 
     OnPrepareResponse = ctx =>
     {
-        var cacheMaxAgeOneWeek = (60 * 60 * 24 * 7).ToString();
         ctx.Context.Response.Headers.Append(
              "Cache-Control", $"public, max-age={cacheMaxAgeOneWeek}");
     }
 });
+```
+
+applicationsetting.json
+
+```json
+  "GoogleCloudStorageOptions": {
+    "BucketName": "{gcp bucket}",
+    "CredentialFile": "{credential file}"
+  }
 ```
 
 ### Current limitations

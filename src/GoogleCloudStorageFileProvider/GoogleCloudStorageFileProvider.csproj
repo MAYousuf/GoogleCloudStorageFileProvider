@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Google Cloud Storage file provider for ASP.NET Core.</Description>
-    <VersionPrefix>1.0.0-beta1</VersionPrefix>
+    <VersionPrefix>1.0.0</VersionPrefix>
     <Authors>mayousuf</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageTags>dotnet;asp-net-core;blob-storage;google;cloud;gcp</PackageTags>
