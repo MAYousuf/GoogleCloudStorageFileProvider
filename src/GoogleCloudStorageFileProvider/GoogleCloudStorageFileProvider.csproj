@@ -1,29 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>Google Cloud Storage file provider for ASP.NET Core.</Description>
-    <VersionPrefix>1.0.1</VersionPrefix>
-    <Authors>mayousuf</Authors>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageTags>dotnet;asp-net-core;blob-storage;google;cloud;gcp</PackageTags>
-    <PackageProjectUrl>https://github.com/mayousuf/GoogleCloudStorageFileProvider</PackageProjectUrl>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/mayousuf/GoogleCloudStorageFileProvider.git</RepositoryUrl>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Description>Google Cloud Storage file provider for ASP.NET Core.</Description>
+		<VersionPrefix>1.0.1</VersionPrefix>
+		<Authors>mayousuf</Authors>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<PackageTags>dotnet;asp-net-core;blob-storage;google;cloud;gcp</PackageTags>
+		<PackageProjectUrl>https://github.com/mayousuf/GoogleCloudStorageFileProvider</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReleaseNotes>(Package release notes are in CHANGELOG.md)</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/mayousuf/GoogleCloudStorageFileProvider.git</RepositoryUrl>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\README.md" Link="README.md" />
-	<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\README.md" Link="README.md" />
+		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 
-  <ItemGroup>
-    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="8.0.0" />
-  </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="8.0.0" />
+	</ItemGroup>
+	<Target Name="InjectPackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec" Condition="Exists('CHANGELOG.md')">
+		<PropertyGroup>
+			<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/CHANGELOG.md"))</PackageReleaseNotes>
+		</PropertyGroup>
+	</Target>
 </Project>
