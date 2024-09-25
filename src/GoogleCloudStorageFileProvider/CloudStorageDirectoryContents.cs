@@ -14,7 +14,7 @@ namespace GoogleCloudStorageFileProvider
             _contents = contents;
         }
 
-        public bool Exists => _contents != null && _contents.Any();
+        public bool Exists => _contents != null ;
 
         public IEnumerator<IFileInfo> GetEnumerator() => _contents.GetEnumerator();
 

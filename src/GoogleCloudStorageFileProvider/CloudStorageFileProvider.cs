@@ -30,8 +30,10 @@ namespace GoogleCloudStorageFileProvider
 
             try
             {
-                var objects = _storageClientFactory.GetStorageClient().ListObjects(_cloudStorageOptions.BucketName, subpath);
-                var contents = objects.Select(o => new CloudStorageFileInfo(_storageClientFactory, o));
+                var options = new ListObjectsOptions() { Delimiter = "/", IncludeTrailingDelimiter = true };
+                var objects = _storageClientFactory.GetStorageClient().ListObjects(_cloudStorageOptions.BucketName, subpath, options);
+                //objects.
+                var contents = objects.Where(o => o.Name != subpath).Select(o => new CloudStorageFileInfo(_storageClientFactory, o, subpath));
                 return new CloudStorageDirectoryContents(contents);
             }
             catch
@@ -48,7 +50,7 @@ namespace GoogleCloudStorageFileProvider
             try
             {
                 var obj = _storageClientFactory.GetStorageClient().GetObject(_cloudStorageOptions.BucketName, subpath);
-                return new CloudStorageFileInfo(_storageClientFactory, obj);
+                return new CloudStorageFileInfo(_storageClientFactory, obj, subpath);
             }
             catch
             {
